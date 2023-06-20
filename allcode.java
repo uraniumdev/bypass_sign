@@ -1,22 +1,3 @@
-import os
-
-def merge_files(directory, output_file):
-    with open(output_file, 'w') as outfile:
-        for root, _, files in os.walk(directory):
-            for file in files:
-                file_path = os.path.join(root, file)
-                if file_path != output_file:
-                    with open(file_path, 'r') as infile:
-                        outfile.write(infile.read())
-                    outfile.write('\n')  # Add a newline between files
-
-# Usage example
-directory_path = r'D:\Android\APK Tool\APK.Tool.GUI.v3.2.2.0\xx'
-output_file_path = r'D:\Android\APK Tool\APK.Tool.GUI.v3.2.2.0\xx\al.txt'
-
-merge_files(directory_path, output_file_path)
-print(f"All files in '{directory_path}' and its subdirectories have been merged into '{output_file_path}'.")
-
 package com.swift.sandhook.utils;
 
 import android.os.Build;
